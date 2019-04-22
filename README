@@ -106,18 +106,7 @@ The defualt biclustering method in QUBIC2 uses KL score to control bicluster exp
 ==================
 Advanced usages
 ==================
-- A new function that can expand identified biclusters in specific environment. Suppose you have two expression matrices
- A and B, where B is subset of A, you can extend the biclusters of B in the matrix A as following,
-    
-    $ ./qubic -i A
-    
-    $ ./qubic -i B
-    
-    $ ./qubic -i A.chars -b B.blocks -s
 
-and the program will generate a 'B.blocks.expansion' file, containing the enlarged biclusters in 'B.blocks'.
-
-	==========
 - when we use the parameter -r (>1), we have two methods, quantile_from_sorted_data and quantile_from_sorted_data_value, 
 see details in read_array.c. now the results have each own advantages on GO, KEGG and REGULON.-07.20.2009
 
