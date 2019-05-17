@@ -87,5 +87,43 @@ You will get four output files, namely RPKM_testing_1.chars,RPKM_testing_1.em.ch
 
 ## Biclustering
 
+The second step of QUBIC2 is biclustering. Given the discretization is done and discretized data is at hand, we offer the following options:
 
+- KL (refers to KL objective function + regular expansion)
+```
+```
+You will get a file named example.chars.blocks, which contains the output biclusters.
+
+- KLDual (refers to KL objective function + Dual expansion)
+```
+```
+You can find the output biclusters in the example.chars.blocks file.
+
+- Dual (refers to 1.0 objective function + Dual expansion)
+```
+```
+The output biclusters are in the example.chars.blocks file.
+
+- 1.0 biclustering (refers to 1.0 objective function + regular expansion)
+```
+```
+
+The output biclusters are in the example.chars.blocks file.
+
+**Note**
+
+1. The -d argument is important as it tells the program that the input for biclustering is discretized data
+2. Current example cases take two steps to finish the whole process: discretization and biclustering. For the first step we use a -F argument to tell that we just want to do discretization, and for the sencond step we use a -d argument.
+3. You may also conduct discretization + biclustering with one command line, just use  ./qubic -i ./data/example or ./qubic -i ./data/RPKM_testing_1 and add the parameters for specific discreitzaion mehtods, e.g., ./qubic -i ./data/example -n or ./qubic -i ./data/RPKM_testing_1 -R. However, as the discretization usually takes a long time and sometimes you may need to adjust biclustering parameters, we recommend to run discretization first, and then run biclustering under different parameters. In this case, you don’t need to wast time on discretization.
+
+## Refences
+
+Li, Guojun, Qin Ma, Haibao Tang, Andrew H Paterson, and Ying Xu. 2009. “QUBIC: A Qualitative Biclustering Algorithm for Analyses of Gene Expression Data.” Nucleic Acids Research 37 (15). Oxford University Press: e101–e101.
+
+Wan, Changlin, Wennan Chang, Yu Zhang, Fenil Shah, Sha Cao, Xin Chen, Melissa Fishel, Qin Ma, and Chi Zhang. 2018. “LTMG (Left Truncated Mixture Gaussian) Based Modeling of Transcriptional Regulatory Heterogeneities in Single Cell Rna-Seq Data a Perspective from the Kinetics of MRNA Metabolism.” BioRxiv. Cold Spring Harbor Laboratory. doi:10.1101/430009.
+
+## Contact ##
+
+Any questions, problems, bugs are welcome and should be dumped to
+Qin Ma <Qin.Ma@osumc.edu>
 
