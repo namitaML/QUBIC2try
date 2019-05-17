@@ -26,16 +26,19 @@ The input to QUBIC2 is the expression matrix:
 Download the source code from https://github.com/maqin2001/qubic2 ,which will be a file named  qubic2-master.zip. Put it in any directpry, and type
 
 ```
+unzip qubic2-master.zip
 ```
 
 Go to the ‘qubic2-master’ folder
 
 ```
+cd qubic2-master
 ```
 
 Type make to compile the source code:
 
 ```
+make
 ```
 
 Then the compiled codes are within the qubic2-master directory.
@@ -59,6 +62,7 @@ QUBIC adopted option1. For more details, please refer to (Li et al. 2009). Optio
 - To conduct Option1, type
 
 ```
+./qubic -i ./data/example -F
 ```
 
 You will get two output files, namely example.chars and example.rules, and the discretized data is in the example.chars.
@@ -66,6 +70,7 @@ You will get two output files, namely example.chars and example.rules, and the d
 - To conduct Option2, type
 
 ```
+./qubic -i ./data/example -F -n
 ```
 
 You will get four output files, namely example.chars, example.em.chars,  example.original.chars and example.rules,. The discretized data to be used in the following biclustering is the example.chars file.
@@ -73,16 +78,20 @@ You will get four output files, namely example.chars, example.em.chars,  example
 - To conduct Option3, type
 
 ```
+./qubic -i ./data/RPKM_testing_1 -F -R
 ```
 
 You will get four output files, namely RPKM_testing_1.chars,RPKM_testing_1.em.chars,  RPKM_testing_1.original.chars and RPKM_testing_1.rules. The discretized data to be used in the following biclustering is the RPKM_testing_1.chars file.
 
 **Note:** For each option, you may also add a -q parameter(0<q<=0.5. default:0.06), e.g.,
 ```
+./qubic -i ./data/example -F -q 0.1
 ```
 ```
+./qubic -i ./data/example -F -n -q 0.1
 ```
 ```
+./qubic -i ./data/RPKM_testing_1 -F -R -q 0.1
 ```
 
 ## Biclustering
@@ -91,21 +100,25 @@ The second step of QUBIC2 is biclustering. Given the discretization is done and 
 
 - KL (refers to KL objective function + regular expansion)
 ```
+./qubic -i ./data/example.chars -d 
 ```
 You will get a file named example.chars.blocks, which contains the output biclusters.
 
 - KLDual (refers to KL objective function + Dual expansion)
 ```
+./qubic -i ./data/example.chars -d -C
 ```
 You can find the output biclusters in the example.chars.blocks file.
 
 - Dual (refers to 1.0 objective function + Dual expansion)
 ```
+./qubic -i ./data/example.chars -d -C -N
 ```
 The output biclusters are in the example.chars.blocks file.
 
 - 1.0 biclustering (refers to 1.0 objective function + regular expansion)
 ```
+./qubic -i ./data/example.chars -d -N
 ```
 
 The output biclusters are in the example.chars.blocks file.
