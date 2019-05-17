@@ -8,7 +8,7 @@ We will assum you have the following installed:
 
 - A C++ 11 compatible compiler such as >=g++4.8(might work in g++-4.7, though untested)
 
-- make which is also installed on most machines
+- **make** which is also installed on most machines
 
 ## Input
 
@@ -47,7 +47,7 @@ Then the compiled codes are within the qubic2-master directory.
 
 ## Example dataset
 
-This tutorial run on several real/simulated dataset to illustrate the results obtained at each step. You will find them under the qubic2-master/data folder. In the following, we will mainly use the  "example" file(microarry data from E. coli, with 100 genes and 100 samples) and  "RPKM_testing_1" file (simulated RNA-seq data, with 10 genes and 1000 conditions).
+This tutorial run on several real/simulated dataset to illustrate the results obtained at each step. You will find them under the **qubic2-master/data folder**. In the following, we will mainly use the  "example" file(microarry data from E. coli, with 100 genes and 100 samples) and  "RPKM_testing_1" file (simulated RNA-seq data, with 10 genes and 1000 conditions).
 
 ## Discretization
 
@@ -83,7 +83,7 @@ You will get four output files, namely example.chars, example.em.chars,  example
 
 You will get four output files, namely RPKM_testing_1.chars,RPKM_testing_1.em.chars,  RPKM_testing_1.original.chars and RPKM_testing_1.rules. The discretized data to be used in the following biclustering is the RPKM_testing_1.chars file.
 
-**Note:** For each option, you may also add a -q parameter(0<q<=0.5. default:0.06), e.g.,
+**Note:** For each option, you may also add a **-q** parameter(0<q<=0.5. default:0.06), e.g.,
 ```
 ./qubic -i ./data/example -F -q 0.1
 ```
@@ -127,7 +127,7 @@ The output biclusters are in the example.chars.blocks file.
 
 1. The -d argument is important as it tells the program that the input for biclustering is discretized data
 2. Current example cases take two steps to finish the whole process: discretization and biclustering. For the first step we use a -F argument to tell that we just want to do discretization, and for the sencond step we use a -d argument.
-3. You may also conduct discretization + biclustering with one command line, just use  ./qubic -i ./data/example or ./qubic -i ./data/RPKM_testing_1 and add the parameters for specific discreitzaion mehtods, e.g., ./qubic -i ./data/example -n or ./qubic -i ./data/RPKM_testing_1 -R. However, as the discretization usually takes a long time and sometimes you may need to adjust biclustering parameters, we recommend to run discretization first, and then run biclustering under different parameters. In this case, you don’t need to wast time on discretization.
+3. You may also conduct discretization + biclustering with one command line, just use  ./qubic -i ./data/example or ./qubic -i ./data/RPKM_testing_1 and add the parameters for specific discreitzaion mehtods, e.g.,** ./qubic -i ./data/example -n** or** ./qubic -i ./data/RPKM_testing_1 -R**. However, as the discretization usually takes a long time and sometimes you may need to adjust biclustering parameters, we recommend to run discretization first, and then run biclustering under different parameters. In this case, you don’t need to wast time on discretization.
 
 ## Refences
 
