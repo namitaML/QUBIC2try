@@ -18,3 +18,26 @@ The input to QUBIC2 is the expression matrix:
 - Expression units: the preferred expression values are RPKM/FPKM/CPM.
 - The data file should be tab delimited.
 - The first row and first column should be the names of conditions and genes, respectively.
+
+# Usage
+
+## Installation
+
+Download the source code from https://github.com/maqin2001/qubic2 ,which will be a file named  qubic2-master.zip. Put it in any directpry, and type
+
+```
+```
+
+Go to the ‘qubic2-master’ folder
+
+```
+```
+
+Type make to compile the source code:
+
+```
+```
+
+Then the compiled codes are within the qubic2-master directory.
+
+**Note:** You may fail to compile QUBIC2 if the compiler version is too old. To check the version, you may type gcc -v
