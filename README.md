@@ -56,6 +56,36 @@ The first step in QUBIC2 is data discretization, and you may choose to use one o
 
 QUBIC adopted option1. For more details, please refer to (Li et al. 2009). Option2 is designed for microarray data, and Option3 is for RNA-seq or scRNA-seq which contain abundant zeros. For details regarding the model behind Option2 and Option3, please refer to (Wan et al. 2018).
 
+- To conduct Option1, type
+
+```
+```
+
+You will get two output files, namely example.chars and example.rules, and the discretized data is in the example.chars.
+
+- To conduct Option2, type
+
+```
+```
+
+You will get four output files, namely example.chars, example.em.chars,  example.original.chars and example.rules,. The discretized data to be used in the following biclustering is the example.chars file.
+
+- To conduct Option3, type
+
+```
+```
+
+You will get four output files, namely RPKM_testing_1.chars,RPKM_testing_1.em.chars,  RPKM_testing_1.original.chars and RPKM_testing_1.rules. The discretized data to be used in the following biclustering is the RPKM_testing_1.chars file.
+
+**Note:** For each option, you may also add a -q parameter(0<q<=0.5. default:0.06), e.g.,
+```
+```
+```
+```
+```
+```
+
+## Biclustering
 
 
 
