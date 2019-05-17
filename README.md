@@ -50,11 +50,11 @@ This tutorial run on several real/simulated dataset to illustrate the results ob
 
 The first step in QUBIC2 is data discretization, and you may choose to use one of the following three discretization methods:
 
-1.quantile-based
+1. quantile-based
 
-2.mixture of Gaussian distribution based
+2. mixture of Gaussian distribution based
 
-3.left-truncated mixture of Gaussian distribution
+3. left-truncated mixture of Gaussian distribution
 
 
 QUBIC adopted option1. For more details, please refer to (Li et al. 2009). Option2 is designed for microarray data, and Option3 is for RNA-seq or scRNA-seq which contain abundant zeros. For details regarding the model behind Option2 and Option3, please refer to (Wan et al. 2018).
